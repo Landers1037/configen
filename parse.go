@@ -53,7 +53,6 @@ func SaveConfig(c interface{}, t, file string) error {
 		if t == v {
 			return saveForType(c, t, file)
 		}
-		break
 	}
 
 	return Err(ErrSuffix)
