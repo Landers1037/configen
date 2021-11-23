@@ -20,7 +20,6 @@ func ParseConfig(c interface{}, t, file string) error {
 		if t == v {
 			return parseForType(c, t, file)
 		}
-		break
 	}
 
 	return Err(ErrSuffix)

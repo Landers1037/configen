@@ -14,6 +14,13 @@ type JsonData struct {
 	Age  int
 }
 
+func TestParseConfig(t *testing.T) {
+	v := new(JsonData)
+	err := ParseConfig(v, JSON, "test.json")
+	t.Log(v)
+	t.Log(err)
+}
+
 func TestParseJson(t *testing.T) {
 	v := new(JsonData)
 	err := parseJson(v, "test.json")

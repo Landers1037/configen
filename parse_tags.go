@@ -9,11 +9,13 @@ import (
 	"reflect"
 )
 
+type HandleEnv func(env string) interface{}
+
 // ValidateTags 自定义标签的解析 用于配置默认值
 // eg: `config:"env"` 默认为0值时从环境变量key: env读取
 // env 需要读取的环境变量
 // f 处理环境变量的函数，返回最终处理后需要更改的值
-func ValidateTags(v interface{}, env string, f func() interface{}) error {
+func ValidateTags(v interface{}, env string, f HandleEnv) error {
 	val := reflect.ValueOf(v).Elem()
 	typ := reflect.TypeOf(v).Elem()
 
@@ -22,7 +24,7 @@ func ValidateTags(v interface{}, env string, f func() interface{}) error {
 			if typ.Field(i).Tag.Get("config") != env {
 				return Err(ErrValidate, "env key invalid")
 			}
-			envInterface := f()
+			envInterface := f(env)
 			if reflect.TypeOf(envInterface).Kind() != val.Field(i).Kind() {
 				return Err(ErrValidate)
 			}

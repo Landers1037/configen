@@ -18,8 +18,8 @@ type TagTest struct {
 func TestParseTags(t *testing.T) {
 	_ = os.Setenv("env", "Conf")
 	v := new(TagTest)
-	err := ValidateTags(v, "env", func() interface{} {
-		return os.Getenv("env")
+	err := ValidateTags(v, "env", func(env string) interface{} {
+		return os.Getenv(env)
 	})
 
 	t.Error(err)
