@@ -33,10 +33,11 @@ const (
 
 // infos
 const (
-	INI  = "ini"
-	JSON = "json"
-	Yaml = "yaml"
-	Gdx  = "gdx"
+	INI    = "ini"
+	JSON   = "json"
+	Config = "config" // config is an alias of json
+	Yaml   = "yaml"
+	Gdx    = "gdx"
 )
 
 // 类型枚举
@@ -47,7 +48,7 @@ const (
 	GdxType
 )
 
-var support = []string{INI, JSON, Yaml, Gdx}
+var support = []string{INI, JSON, Config, Yaml, Gdx}
 
 func Err(e string, args ...string) error {
 	errs := append(append([]string{}, e), args...)

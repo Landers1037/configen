@@ -65,6 +65,8 @@ func parseForType(c interface{}, t, file string) error {
 		return parseINI(c, file)
 	case JSON:
 		return parseJson(c, file)
+	case Config:
+		return parseJson(c, file)
 	case Yaml:
 		return parseYaml(c, file)
 	case Gdx:
@@ -84,6 +86,8 @@ func saveForType(c interface{}, t, file string) error {
 	case INI:
 		return saveINI(c, file)
 	case JSON:
+		return saveJson(c, file)
+	case Config:
 		return saveJson(c, file)
 	case Yaml:
 		return saveYaml(c, file)

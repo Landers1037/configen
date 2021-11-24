@@ -11,6 +11,4 @@ func Default(filed interface{}, def interface{}) {
 	filed = def
 }
 
-func DefaultEnv(filed interface{}, key string) {
-	
-}
+
