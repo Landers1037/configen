@@ -19,5 +19,3 @@ func Default(filed interface{}, def interface{}) {
 		reflect.ValueOf(filed).Elem().Set(reflect.ValueOf(def))
 	}
 }
-
-

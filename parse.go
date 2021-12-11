@@ -8,6 +8,7 @@ package configen
 import (
 	"github.com/json-iterator/go"
 )
+
 // 加载配置文件 映射到结构体中
 
 var json = jsoniter.ConfigCompatibleWithStandardLibrary
@@ -65,7 +66,7 @@ func parseForType(c interface{}, t, file string) error {
 		return parseINI(c, file)
 	case JSON:
 		return parseJson(c, file)
-	case Config:
+	case Pig:
 		return parseJson(c, file)
 	case Yaml:
 		return parseYaml(c, file)
@@ -87,7 +88,7 @@ func saveForType(c interface{}, t, file string) error {
 		return saveINI(c, file)
 	case JSON:
 		return saveJson(c, file)
-	case Config:
+	case Pig:
 		return saveJson(c, file)
 	case Yaml:
 		return saveYaml(c, file)

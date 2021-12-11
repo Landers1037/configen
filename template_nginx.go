@@ -24,7 +24,6 @@ func MakeTemplateNginxTest(tpl string, data interface{}) error {
 	return MakeTemplate(tpl, os.Stdout, data)
 }
 
-
 func MakeTemplateNginxString(tpl, file string, data interface{}) error {
 	f, err := os.OpenFile(file, os.O_CREATE|os.O_TRUNC, 0644)
 	if err != nil {

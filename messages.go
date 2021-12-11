@@ -35,6 +35,7 @@ const (
 const (
 	INI    = "ini"
 	JSON   = "json"
+	Pig    = "pig"    // pig is an alias of json
 	Config = "config" // config is an alias of json
 	Yaml   = "yaml"
 	Gdx    = "gdx"
@@ -48,7 +49,7 @@ const (
 	GdxType
 )
 
-var support = []string{INI, JSON, Config, Yaml, Gdx}
+var support = []string{INI, JSON, Pig, Config, Yaml, Gdx}
 
 func Err(e string, args ...string) error {
 	errs := append(append([]string{}, e), args...)

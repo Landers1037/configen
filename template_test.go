@@ -13,11 +13,11 @@ import (
 func TestMakeTemplateNginx(t *testing.T) {
 	err := MakeTemplateNginxTest("nginx.tpl",
 		map[string]interface{}{
-		"app": "Test",
-		"listen": "80",
-		"domain": "a.b.c",
-		"des": "",
-		"port": "1000",
+			"app":    "Test",
+			"listen": "80",
+			"domain": "a.b.c",
+			"des":    "",
+			"port":   "1000",
 		})
 	if err != nil {
 		t.Error(err)

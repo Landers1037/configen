@@ -13,8 +13,7 @@ import (
 // 配置文件模板生成 支持py的gunicorn和nginx
 const (
 	TpName = "ConfigenTpl"
-	TpRaw =
-		`# config generate by configen
+	TpRaw  = `# config generate by configen
 # copyright github.com/landers1037/configen
 {{range $r := . -}}
 	{{print $r}}
